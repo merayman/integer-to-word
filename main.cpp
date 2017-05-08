@@ -36,7 +36,7 @@ string convertIntToWord(long num){
     //between 0 - 100
     for (long i = 1; i < 10; ++i) {
         long l = i * 10;
-        if( l < num && l+10 >num){
+        if( l < num && l+10 > num){
             long t = num - l;
             if (t>0)
                 return convertIntToWord(l) + " " + convertIntToWord(t);
@@ -49,44 +49,33 @@ string convertIntToWord(long num){
         long l = i * 100;
         if( l <= num && l+100 >num){
             long t = num - l;
-            if (t>0){
-                if(num/100!=1) // if the num is xyz where x != 1
-                    return convertIntToWord(num/100) + " yüz " + convertIntToWord(t);
-                else // if the num is 1xy
-                    return convertIntToWord(num-t) + " " + convertIntToWord(t);
-            }
+            if (t>0)
+                return convertIntToWord(l) + " " + convertIntToWord(t);
             else
-                return convertIntToWord(num/100) + " yüz";
+                return convertIntToWord(i) + " yüz";
         }
     }
     //between 1000-1000000
     for (long i = 1; i < 1000; ++i) {
         long l = i * 1000;
-        if( l <= num && l+1000 >num){
+        if( l <= num && l+1000 > num){
             long t = num - l;
-            if (t>0){
-                if(num/100!=1) // if the num is xyz wthere x != 1
-                    return convertIntToWord(num/1000) + " bin " + convertIntToWord(t);
-                else // if the num is 1xyz
-                    return convertIntToWord(num-t) + " " + convertIntToWord(t);
-            }
+            if (t>0)
+                return convertIntToWord(l) + " " + convertIntToWord(t);
             else
-                return convertIntToWord(num/1000) + " bin";
+                return convertIntToWord(i) + " bin";
         }
     }
     //between 1000000-1000000000
     for (long i = 1; i < 1000; ++i) {
         long l = i * 1000000;
-        if( l <= num && l+1000000 >num){
+        if( l <= num && l+1000000 > num){
             long t = num - l;
-            if (t>0){
-                if(num/100!=1) // if the num is xyz wthere x != 1
-                    return convertIntToWord(num/1000000) + " milyon " + convertIntToWord(t);
-                else // if the num is 1xyz
-                    return convertIntToWord(num-t) + " " + convertIntToWord(t);
-            }
+            if (t>0)
+                return convertIntToWord(l) + " " + convertIntToWord(t);
+
             else
-                return convertIntToWord(num/1000000) + " milyon";
+                return convertIntToWord(i) + " milyon";
         }
     }
 }
