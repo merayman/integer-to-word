@@ -91,7 +91,7 @@ string convertIntToWord(long num){
     }
 }
 int main() {
-    int num;
+    int long;
     cout<<"Enter an integer to convert: ";
     cin>>num;
     cout<<"Converted in Turkish is: " + convertIntToWord(num);
